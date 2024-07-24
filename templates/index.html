@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Analisis Sentimen</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+<body>
+    <div class="header">
+        <h1>Analisis Sentimen Aplikasi KAI Access</h1>
+    </div>
+    <div class="Box">
+    </div>
+    <div class="Box_2">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <form method="post" action="{{ url_for('predict') }}">
+                        <textarea class="form-input"  name="new_sentence" rows="4" cols="50" placeholder="Masukkan teks untuk dianalisis..."></textarea><br><br>
+                        <button class='predict' type="submit" class="btn btn-primary" id="btn-predict">Analisis!</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <span id="result">{{ prediction_result }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

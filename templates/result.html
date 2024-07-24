@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Analisis Sentimen</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <title>Hasil</title>
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='result_style.css') }}">
+
+    <div class="bg-image"></div>
+
+    <div class="bg-text">
+        <h1>Hasil Analisis:</h1>
+        <p id="prediction-result">{{ prediction_result }}</p>
+    </div>
+
+    <div class="back-button" id="backButton" onclick="redirectToIndex()">
+        <h5>Kembali</h5>
+    </div>
+    
+    <script>
+        function redirectToIndex() {
+             window.location.href = "{{ url_for('index') }}";
+        }
+    </script>
+
+</body>
+</html>
